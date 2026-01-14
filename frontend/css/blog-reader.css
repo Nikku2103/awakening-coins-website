@@ -1,0 +1,394 @@
+.blog-reader-container {
+  max-width: 1500px;
+  margin: 100px auto 50px;
+  padding: 0 5%;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.blog-category {
+  display: inline-block;
+  background: #d4a574;
+  color: #2c1810;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.blog-title {
+font-size: 2.5rem;
+  color: #2c1810;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+}
+
+.blog-meta {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.blog-meta span {
+  margin: 0 0.5rem;
+}
+
+.blog-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.blog-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-content h2 {
+  color: #2c1810;
+  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
+}
+
+.blog-content h3 {
+  color: #2c1810;
+  margin: 1.5rem 0 1rem;
+  font-size: 1.5rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 1rem 0 1rem 2rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d4a574;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 3rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #d4a574;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: #d4a574;
+  color: #2c1810;
+  gap: 1rem;
+}
+
+.share-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.share-section h4 {
+  color: #2c1810;
+  margin-bottom: 1rem;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;   /* space from heading */
+  margin-bottom: 1rem; /* space before back button */
+}
+
+
+.share-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.share-facebook {
+  background: #1877f2;
+  color: white;
+}
+
+.share-twitter {
+  background: #1da1f2;
+  color: white;
+}
+
+.share-linkedin {
+  background: #0a66c2;
+  color: white;
+}
+
+.share-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* WhatsApp */
+.share-whatsapp {
+  background: #25d366; /* official WhatsApp green */
+  color: white;
+}
+
+/* Instagram */
+.share-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  color: white;
+}
+
+/* =========================
+   BLOG VIDEO – FIXED 16:9
+========================= */
+
+.blog-video {
+  width: 100%;
+  max-width: 800px;
+  margin: 3rem auto;
+  aspect-ratio: 16 / 9;   /* 🔥 modern, correct */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.blog-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.blog-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog-content ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.blog-content ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3cb371; /* green */
+  font-weight: bold;
+  top: 0.2em;
+}
+
+
+
+  body {
+    padding: 40px;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+
+  /* =========================
+   MOBILE BLOG READER SCALING
+========================= */
+@media (max-width: 600px) {
+
+  /* Container */
+  .blog-reader-container {
+    padding: 0 0px;
+    margin-top: 80px;
+  }
+
+  /* Category pill */
+  .blog-category {
+    padding: 0.4rem 1.2rem;
+    font-size: 12px;
+  }
+
+  /* Title */
+  .blog-title {
+    font-size: 1.6rem;     /* ~25–26px */
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Meta */
+  .blog-meta {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Image */
+  .blog-image {
+    height: 220px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Video — YouTube mobile feel */
+  .blog-video {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+  }
+
+  /* Content */
+  .blog-content {
+    font-size: 0.95rem;    /* ~15px */
+    line-height: 1.6;
+  }
+
+  .blog-content p {
+    margin-bottom: 1.1rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.3rem;
+    margin: 1.6rem 0 0.8rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.15rem;
+    margin: 1.2rem 0 0.6rem;
+  }
+
+  /* Share buttons */
+  .share-buttons {
+    gap: 0.6rem;
+  }
+
+  .share-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Back button */
+  .back-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+
+
+/* Group Contact + WhatsApp */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* WhatsApp button styling */
+.whatsapp-button {
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.whatsapp-button i {
+  font-size: 1.1rem;
+}
+
+/* Hover state */
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Group Contact + icon */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icon link */
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* Actual icon */
+.nav-icon {
+  width: 30px;     /* small, professional */
+  height: 30px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover feedback (subtle, not loud) */
+.nav-icon-link:hover .nav-icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+
+.nav-icon-link a{
+    padding: 0px;
+}

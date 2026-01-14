@@ -1,0 +1,366 @@
+/* Admin specific styles */
+.admin-container {
+  max-width: 1200px;
+  margin-top: calc(var(--header-height, 80px) + 20px);
+  padding: 0 5%;
+}
+
+.admin-header {
+  background: #2c1810;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  color: #d4a574;
+  margin-bottom: 0.5rem;
+}
+
+.admin-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.admin-nav a {
+  color: #d4a574;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d4a574;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.admin-nav a:hover {
+  background: #d4a574;
+  color: #2c1810;
+}
+
+.blog-form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c1810;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #d4a574;
+  outline: none;
+}
+
+#blogContent {
+  min-height: 300px;
+}
+
+.preview-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #d4a574;
+  color: #2c1810;
+}
+
+.btn-primary:hover {
+  background: #c59a66;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.existing-blogs {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  max-height: 70vh;
+  min-height: 70vh;   /* 🔥 KEY: prevents collapse */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.blog-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+
+  scrollbar-gutter: stable; /* 🔥 modern browsers */
+}
+
+
+
+.blog-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-item-info h4 {
+  color: #2c1810;
+  margin-bottom: 0.5rem;
+}
+
+.blog-item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#blogPreviewFrame {
+  width: 100%; 
+  min-height: 500px;
+  height: 70vh;
+  border: 2px solid #d4a574;
+  border-radius: 12px;
+  background: white;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;          /* space BETWEEN buttons */
+  margin-top: 1.5rem; /* space FROM preview border */
+}
+
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   ADMIN – MOBILE SCALING
+========================= */
+@media (max-width: 600px) {
+
+  .admin-container {
+    padding: 0 16px;
+  }
+
+  .admin-header {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .admin-header p {
+    font-size: 0.85rem;
+  }
+
+  .admin-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .admin-nav a {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .blog-form-container,
+  .existing-blogs {
+    padding: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.1rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  #blogContent {
+    min-height: 220px;
+  }
+
+  .preview-section {
+    padding: 1rem;
+  }
+
+  #blogPreviewFrame {
+    height: 50vh;   /* 🔥 HUGE FIX */
+    min-height: 300px;
+  }
+
+  .form-actions {
+    gap: 0.75rem;
+  }
+
+  .form-actions .btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+.blog-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-filters select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+/* Group Contact + WhatsApp */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* WhatsApp button styling */
+.whatsapp-button {
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.whatsapp-button i {
+  font-size: 1.1rem;
+}
+
+/* Hover state */
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Group Contact + icon */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icon link */
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* Actual icon */
+.nav-icon {
+  width: 30px;     /* small, professional */
+  height: 30px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover feedback (subtle, not loud) */
+.nav-icon-link:hover .nav-icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+
+.nav-icon-link a{
+    padding: 0px;
+}
+
+
+

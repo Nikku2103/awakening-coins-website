@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Admin - Awakening Coins</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+    <script
+      src="https://cdn.tiny.cloud/1/ecilbpwqdejr2exz4v0uqfk4h04xo0l2prbiycpd8sdwo9eo/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+  </head>
+  <body>
+    <!-- Same header as main site -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="../assets/images/logo.svg"
+            alt="Awakening Coins Logo"
+            class="logo-image"
+          />
+          <div>
+            <strong>Awakening</strong><br />
+            <strong>Coins</strong>
+          </div>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="../pages/index.html">Home</a></li>
+          <li><a href="../pages/index.html#about">About</a></li>
+          <li><a href="../pages/index.html#services">Services</a></li>
+          <li><a href="../pages/blogs.html">Blogs</a></li>
+          <li class="nav-cta-group">
+            <a href="#contact" class="cta-button">Contact</a>
+
+            <a
+              href="https://wa.me/918745866373"
+              class="nav-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+            >
+              <img
+                src="/assets/images/wp.svg"
+                alt="WhatsApp"
+                class="nav-icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="admin-container">
+      <div class="admin-header">
+        <h1>Blog Management</h1>
+        <p>Upload and manage your blog posts here</p>
+        <div class="admin-nav">
+          <a href="#upload">Upload New Blog</a>
+          <a href="#existing">Existing Blogs</a>
+          <a href="index.html">Back to Home</a>
+        </div>
+      </div>
+
+      <div class="blog-form-container" id="upload">
+        <h2 id="formMode">Upload New Blog Post</h2>
+        <form id="blogUploadForm">
+          <div class="form-group">
+            <label for="blogType">Blog Type *</label>
+            <select id="blogType">
+              <option value="">Select Blog Type</option>
+              <option value="service">Service Blog</option>
+              <option value="product">Product Blog (Course)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="blogTitle">Blog Title *</label>
+            <input type="text" id="blogTitle" required />
+          </div>
+
+          <div class="form-group">
+            <label for="blogCategory">Category *</label>
+            <select id="blogCategory">
+              <option value="">Select Category</option>
+
+              <!-- SERVICES -->
+              <option value="digital-marketing">Digital Marketing</option>
+              <option value="website-development">Website Development</option>
+              <option value="mobile-app-development">
+                Mobile App Development
+              </option>
+              <option value="video-editing-creatives">
+                Video Editing & Creatives
+              </option>
+
+              <!-- PRODUCTS -->
+              <option value="e-commerce">E-Commerce</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Upload Image</label>
+            <input type="file" id="blogImageFile" accept="image/*" />
+
+            <p style="text-align: center; margin: 0.5rem 0">OR</p>
+
+            <label>Image URL (Direct / Dropbox)</label>
+            <input
+              type="url"
+              id="blogImageUrl"
+              placeholder="https://example.com/image.jpg"
+            />
+
+            <small>You can use Unsplash, Imgur, or upload to your server</small>
+          </div>
+          <div class="form-group">
+            <label for="blogVideo">Video URL (optional)</label>
+            <input
+              type="url"
+              id="blogVideo"
+              placeholder="YouTube / Vimeo / MP4 link"
+            />
+            <small> Leave empty if this blog has no video </small>
+          </div>
+
+          <div class="form-group">
+            <label for="blogExcerpt">Short Description (Excerpt) *</label>
+            <textarea id="blogExcerpt" maxlength="300" required></textarea>
+            <small>Max 300 characters - this appears on the home page</small>
+          </div>
+
+          <div class="form-group">
+            <label for="blogContent">Full Blog Content *</label>
+            <textarea id="blogContent"></textarea>
+
+            <small>Full article content with HTML formatting supported</small>
+          </div>
+
+          <div class="form-group">
+            <label for="blogAuthor">Author Name</label>
+            <input type="text" id="blogAuthor" value="Awakening Coins Team" />
+          </div>
+
+          <!-- Course-specific fields (hidden by default) -->
+          <div id="courseFields" class="hidden">
+            <div class="form-group">
+              <label for="coursePrice">Course Price (Rs.) *</label>
+              <input
+                type="number"
+                id="coursePrice"
+                min="0"
+                step="0.01"
+                placeholder="e.g., 99.99"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="courseDuration">Course Duration *</label>
+              <input
+                type="text"
+                id="courseDuration"
+                placeholder="e.g., 4 weeks, 8 hours"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="courseLevel">Skill Level *</label>
+              <select id="courseLevel">
+                <option value="">Select Level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="whatsappLink">WhatsApp Contact Link *</label>
+              <input
+                type="url"
+                id="whatsappLink"
+                placeholder="https://wa.me/919876543210"
+              />
+              <small
+                >Create a WhatsApp link: https://wa.me/yourphonenumber</small
+              >
+            </div>
+          </div>
+
+          <div class="preview-section">
+            <h3>Live Preview</h3>
+            <iframe id="blogPreviewFrame"></iframe>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              Publish Blog Post
+            </button>
+
+            <button type="button" class="btn btn-secondary">Clear Form</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="existing-blogs" id="existing">
+        <h2>Existing Blog Posts</h2>
+        <div class="blog-filters">
+          <select id="filterType">
+            <option value="all">All Types</option>
+            <option value="service">Service</option>
+            <option value="product">Product</option>
+          </select>
+
+          <select id="filterCategory">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+
+        <div id="blogList" class="blog-list">
+          <!-- Blog posts will be loaded here -->
+        </div>
+      </div>
+    </div>
+    <script src="../js/core.js"></script>
+    <script src="./js/admin-blogs.js"></script>
+  </body>
+</html>

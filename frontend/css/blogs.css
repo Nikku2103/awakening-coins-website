@@ -1,0 +1,486 @@
+.blogs-container {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 5%;
+}
+
+.blogs-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.blogs-header h1 {
+    font-size: 2.8rem;
+    color: #2c1810;
+    margin-bottom: 1rem;
+}
+
+.blogs-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.blogs-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 1rem 2.5rem;
+    border: 2px solid #d4a574;
+    background: transparent;
+    color: #d4a574;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: rgba(212, 165, 116, 0.1);
+}
+
+.tab-btn.active {
+    background: #d4a574;
+    color: #2c1810;
+}
+
+.blogs-content {
+    display: none;
+}
+
+.blogs-content.active {
+    display: block;
+}
+
+.blog-category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #ddd;
+    background: white;
+    color: #666;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-btn:hover {
+    border-color: #d4a574;
+    color: #2c1810;
+}
+
+.category-btn.active {
+    background: #d4a574;
+    color: #2c1810;
+    border-color: #d4a574;
+}
+
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.blog-badges {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.blog-type-badge {
+    background: #28a745;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.blog-type-badge.service {
+    background: #007bff;
+}
+
+.blog-category-badge {
+    background: #d4a574;
+    color: #2c1810;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+
+.blog-title {
+    font-size: 1.3rem;
+    color: #2c1810;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.course-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.course-price {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.course-details {
+    display: flex;
+    gap: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+
+.read-more-btn:hover {
+    background: #c59a66;
+    transform: translateY(-2px);
+}
+
+.buy-now-btn {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 45px;
+    white-space: nowrap;
+}
+
+.buy-now-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.no-blogs {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .blogs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .blogs-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .blog-excerpt {
+        -webkit-line-clamp: 2;
+    }
+    
+    .blog-title {
+        -webkit-line-clamp: 1;
+    }
+}
+
+.blog-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 250px;
+}
+
+/* 🔒 EXCERPT SHOULD GROW VERTICALLY ONLY */
+.blog-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1; /* Take remaining space in content area */
+    min-height: 0;
+}
+
+/* 🔒 ACTIONS MUST OWN WIDTH */
+.blog-actions {
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+    
+    gap: 1rem;
+    flex-shrink: 0;
+
+}
+
+/* 🔒 BUTTON WIDTH IS NOT NEGOTIABLE */
+.read-more-btn {
+    width: 100%;
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    background: #d4a574;
+    color: #2c1810;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s;
+    height: 45px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* =========================
+   CATEGORY FILTER CHIPS (FIXED)
+========================= */
+
+.blog-category-filter {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 4px;
+  margin: 16px 0 24px;
+  scrollbar-width: none;
+  justify-content: flex-start;
+}
+
+.blog-category-filter::-webkit-scrollbar {
+  display: none;
+}
+
+/* buttons */
+.blog-category-filter .category-btn {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* active */
+.blog-category-filter .category-btn.active {
+  background-color: #d4a574;
+  color: #2c1810;
+  border-color: #d4a574;
+}
+
+/* inactive */
+.blog-category-filter .category-btn:not(.active) {
+  background: #fff;
+  border: 1px solid #e0c3a0;
+  color: #666;
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .blog-category-filter {
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
+
+/* =========================
+   BLOGS HERO – MOBILE FIX
+========================= */
+@media (max-width: 600px) {
+
+  /* Title */
+  .blogs-header h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  /* Subtitle */
+  .blogs-header p {
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto 18px;
+  }
+
+  
+}
+
+/* =========================
+   FORCE SERVICE / PRODUCT TABS
+   TO STAY IN ONE LINE (MOBILE)
+========================= */
+@media (max-width: 600px) {
+
+  .blogs-tabs {
+    display: flex;
+    flex-wrap: nowrap;          /* 🔥 prevent wrapping */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .blogs-tabs .tab-btn {
+    flex: 1;                    /* 🔥 equal width */
+    padding: 10px 12px;         /* reduced padding */
+    font-size: 14px;
+    border-radius: 999px;
+    min-width: 0;               /* 🔥 override any min-width */
+    white-space: nowrap;
+  }
+}
+
+
+/* Group Contact + WhatsApp */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* WhatsApp button styling */
+.whatsapp-button {
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.whatsapp-button i {
+  font-size: 1.1rem;
+}
+
+/* Hover state */
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Group Contact + icon */
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icon link */
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* Actual icon */
+.nav-icon {
+  width: 30px;     /* small, professional */
+  height: 30px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover feedback (subtle, not loud) */
+.nav-icon-link:hover .nav-icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+
+.nav-icon-link a{
+    padding: 0px;
+}

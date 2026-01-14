@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Awakening Coins</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/blog-reader.css" />
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Same header as main site -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="../assets/images/logo.svg"
+            alt="Awakening Coins Logo"
+            class="logo-image"
+          />
+          <div>
+            <strong>Awakening</strong><br />
+            <strong>Coins</strong>
+          </div>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="/pages/index.html">Home</a></li>
+          <li><a href="/pages/index.html#about">About</a></li>
+          <li><a href="/pages/index.html#services">Services</a></li>
+          <li><a href="/pages/blogs.html">Blogs</a></li>
+          <li class="nav-cta-group">
+            <a href="#contact" class="cta-button">Contact</a>
+
+            <a
+              href="https://wa.me/918745866373"
+              class="nav-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+            >
+              <img
+                src="/assets/images/wp.svg"
+                alt="WhatsApp"
+                class="nav-icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="blog-reader-container">
+      <div id="blogContentContainer">
+        <!-- Blog content will be loaded here dynamically -->
+        <div style="text-align: center; padding: 3rem">
+          <h2>Loading blog...</h2>
+          <p>
+            If this message persists, the blog may not exist or there was an
+            error loading it.
+          </p>
+          <a href="/pages/index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/core.js"></script>
+    <script src="../js/blog-reader.js"></script>
+  </body>
+</html>
