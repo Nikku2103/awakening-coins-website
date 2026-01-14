@@ -16,7 +16,6 @@ const FILTER_CATEGORIES = {
   ],
 };
 
-
 /* =========================
    AUTH CHECK
 ========================= */
@@ -63,6 +62,8 @@ const courseLevel = document.getElementById("courseLevel");
 const whatsappLink = document.getElementById("whatsappLink");
 
 const blogList = document.getElementById("blogList");
+const metaTitle = document.getElementById("metaTitle");
+const metaDescription = document.getElementById("metaDescription");
 
 /* =========================
    TINYMCE INIT
@@ -191,6 +192,14 @@ blogForm.addEventListener("submit", async (e) => {
   formData.append("excerpt", blogExcerpt.value.trim());
   formData.append("content", contentHtml);
   formData.append("author", blogAuthor.value.trim() || "Awakening Coins Team");
+
+  if (metaTitle.value.trim()) {
+    formData.append("metaTitle", metaTitle.value.trim());
+  }
+
+  if (metaDescription.value.trim()) {
+    formData.append("metaDescription", metaDescription.value.trim());
+  }
 
   // Add course data for products
   if (blogType.value === "product") {
@@ -375,7 +384,6 @@ async function loadBlogs() {
   });
 }
 
-
 /* =========================
    EDIT MODE
 ========================= */
@@ -394,6 +402,9 @@ function startEdit(blog) {
 
   blogImageUrl.value = blog.image || "";
   selectedImageFile = null;
+  metaTitle.value = blog.metaTitle || "";
+metaDescription.value = blog.metaDescription || "";
+
 
   tinymce.get("blogContent").setContent(blog.content || "");
 

@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog - Awakening Coins</title>
+    <title>Blog | Awakening Coins</title>
+
+    <meta
+      name="description"
+      content="Read expert insights from Awakening Coins on digital marketing, SEO, web development, and mobile app growth."
+    />
+
+    <link rel="canonical" href="https://awakeningcoins.com/blogs" />
+
+    <!-- Open Graph (fallback) -->
+    <meta property="og:title" content="Blog | Awakening Coins" />
+    <meta
+      property="og:description"
+      content="Insights on digital marketing, SEO, web development, and apps by Awakening Coins."
+    />
+    <meta property="og:type" content="article" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -11,6 +27,9 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/blog-reader.css" />
     <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+    <script type="application/ld+json" id="blog-schema">
+      {}
+    </script>
   </head>
   <body>
     <!-- Same header as main site -->
@@ -62,6 +81,15 @@
 
     <div class="blog-reader-container">
       <div id="blogContentContainer">
+        <div class="blog-fallback-links" style="display: none">
+          <p>
+            Explore more insights in our
+            <a href="/pages/blogs.html">
+              digital marketing and development blogs </a
+            >.
+          </p>
+        </div>
+
         <!-- Blog content will be loaded here dynamically -->
         <div style="text-align: center; padding: 3rem">
           <h2>Loading blog...</h2>

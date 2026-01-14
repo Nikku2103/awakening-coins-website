@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (initialCategory) {
     activeTab = "service";
   }
-  
+
   bindTabEvents();
   loadBlogs();
 });
@@ -78,7 +78,6 @@ async function loadBlogs() {
     renderAll();
   }
 }
-
 
 /* =========================
    RENDER
@@ -118,8 +117,7 @@ function renderCategoryFilters() {
   if (
     !urlCategoryApplied &&
     initialCategory &&
-    (SERVICE_CATEGORIES[initialCategory] ||
-      PRODUCT_CATEGORIES[initialCategory])
+    (SERVICE_CATEGORIES[initialCategory] || PRODUCT_CATEGORIES[initialCategory])
   ) {
     activeCategory = initialCategory;
     urlCategoryApplied = true;
@@ -180,7 +178,6 @@ function setCategory(category) {
 function renderBlogs() {
   const grid = document.getElementById(`${activeTab}-blogs-grid`);
   if (!grid) return;
- 
 
   const filtered = blogs.filter((blog) => {
     if (blog.type !== activeTab) return false;
@@ -195,11 +192,9 @@ function renderBlogs() {
 }
 
 function renderBlogCard(blog) {
-  const categoryLabel =
-    CATEGORY_LABELS[blog.category] || blog.category;
+  const categoryLabel = CATEGORY_LABELS[blog.category] || blog.category;
 
-  const typeLabel =
-    blog.type === "product" ? "Product" : "Service";
+  const typeLabel = blog.type === "product" ? "Product" : "Service";
 
   return `
     <article class="blog-card">
@@ -239,7 +234,8 @@ function renderBlogCard(blog) {
         }
 
         <div class="blog-actions">
-          <a href="/pages/blog-reader.html?id=${blog._id}"
+          <a href="/pages/blog-reader.html?slug=${blog.slug}"
+
             class="read-more-btn">
             Read More →
           </a>
@@ -258,4 +254,3 @@ function bindTabEvents() {
     });
   });
 }
-
